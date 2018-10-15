@@ -1,7 +1,23 @@
-.container {
-    margin: 15px 15px
+.container{
+    /* margin: 15px 15px; */
+    border-style: double;
+    margin: 0 auto;
 };
 
-.mainSchedule {
 
+#theSchedule {
+    margin: 5px 5px;
+    background-color: blue;
 };
+
+input::placeholder {
+    font-style: italic
+  }
+
+  .form-group {
+      margin: 5px 5px;
+  }
+
+  .display-4, .lead {
+    text-align:center;
+  }

@@ -3,71 +3,78 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
     <title>Isaac Bayon's Train Schedule Program</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="../H7.Train.Schedule/Assets/CSS/style.css">
+    <link href="../TrainSchedule/Assets/CSS/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
 
-    <div class="jumbotron">
+    <!-- <div class="jumbotron">
         <div class="jumbotronContainer">
 
             <h1 class="displayArea">My Train Schedule</h1>
 
             <div id="clock">Current Date &amp; Time: <span id="currentTime"> </span></div>
         </div>
-    </div>
-    <div class="mainContainer">
-        <table id="theSchedule">
-            <thead>
-                <tr id="scheduleHeadings">
-                    <th>Train Name</th>
-                    <th>Destination</th>
-                    <th>Frequency (min)</th>
-                    <th>Next Train Arrives</th>
-                    <th>Minutes Away</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dynamically add table tr and td -->
-            </tbody>
+    </div> -->
 
-        </table>
+    <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">Bootcamp Train Schedule</h1>
+              <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+          </div>
 
+    <table class="table table-hover" id="theSchedule">
+        <!-- the table headings start here -->
+        <thead>
+            <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency (min)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+            </tr>
+        </thead>
+        <!-- the table headings END here -->
+        <tbody>
+            <!-- the js code will populate this section with rows from firebase-->
+        </tbody>
 
-    </div>
+    </table>
 
 
     <hr>
-    <div class="container py-5">
-
+    <div class="container">
+        <!-- <div class="container py-5"> -->
+        <H2>***Admin Use Only***</H2>
+        <p>Add new trains here</p>
+        <hr>
         <form id="trainForm">
+            <!-- Train name div -->
             <div class="form-group row">
                 <label for="trainName" class="col-4 col-form-label">Train Name</label>
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-train"></i>
+                            <div class="fa fa-train"></div>
                         </div>
-                        <input id="trainName" name="trainName" placeholder="Train Name" type="text" required="required"
+                        <input id="trainName" name="trainName" placeholder="train name" type="text" required="required"
                             class="form-control here">
                     </div>
                 </div>
             </div>
+            <!-- destination div -->
             <div class="form-group row">
                 <label for="destination" class="col-4 col-form-label">Destination</label>
                 <div class="col-8">
@@ -75,32 +82,34 @@
                         <div class="input-group-addon">
                             <i class="fa fa-map-marker"></i>
                         </div>
-                        <input id="destination" name="destination" placeholder="Destination" type="text" required="required"
+                        <input id="destination" name="destination" placeholder="destination" type="text" required="required"
                             class="form-control here">
                     </div>
                 </div>
             </div>
+            <!-- frequency div -->
             <div class="form-group row">
-                <label for="firstTrain" class="col-4 col-form-label">First Train Time -- in military time (24HR Clock)
+                <label for="frequency" class="col-4 col-form-label">Frequency (min)
                 </label>
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-clock-o"></i>
                         </div>
-                        <input id="firstTrain" name="firstTrain" placeholder="HH:mm" type="text" required="required"
+                        <input id="frequency" name="frequency" placeholder="frequency" type="text" required="required"
                             class="form-control here">
                     </div>
                 </div>
             </div>
+            <!-- first train time div -->
             <div class="form-group row">
-                <label for="frequency" class="col-4 col-form-label">Train Frequency- in minutes</label>
+                <label for="message" class="col-4 col-form-label">First Arrival Time</label>
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <input id="frequency" name="frequency" placeholder="#" type="text" required="required" class="form-control here">
+                        <input id="firstTrain" name="firstTrain" placeholder="time of first train" type="text" class="form-control here">
                     </div>
                 </div>
             </div>
