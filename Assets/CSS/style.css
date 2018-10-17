@@ -2,22 +2,28 @@
     /* margin: 15px 15px; */
     border-style: double;
     margin: 0 auto;
+    
 };
 
 
-#theSchedule {
-    margin: 5px 5px;
-    background-color: blue;
-};
+/* .trainForm {
+    width: 200px;
+    height: 5px;
+}; */
 
 input::placeholder {
     font-style: italic
   }
 
   .form-group {
-      margin: 5px 5px;
+      margin: 10px 10px;
   }
 
-  .display-4, .lead {
+  .display-4, .lead, .table {
+    text-align:center;
+  }
+
+  th {
+    border-style: double;
     text-align:center;
   }
