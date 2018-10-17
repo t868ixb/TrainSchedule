@@ -17,23 +17,13 @@
 </head>
 
 <body>
-
-
-    <!-- <div class="jumbotron">
-        <div class="jumbotronContainer">
-
-            <h1 class="displayArea">My Train Schedule</h1>
-
-            <div id="clock">Current Date &amp; Time: <span id="currentTime"> </span></div>
-        </div>
-    </div> -->
-
+    
     <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Bootcamp Train Schedule</h1>
-              <p class="lead">Welcome to the City of Bootcamp's train schedule</p>
-            </div>
-          </div>
+        <div class="container">
+            <h1 class="display-4">Bootcamp Train Schedule</h1>
+            <p class="lead">Welcome to the City of Bootcamp's train schedule</p>
+        </div>
+    </div>
 
     <table class="table table-hover" id="theSchedule">
         <!-- the table headings start here -->
@@ -80,7 +70,7 @@
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-map-marker"></i>
+                            <div class="fa fa-map-marker"></div>
                         </div>
                         <input id="destination" name="destination" placeholder="destination" type="text" required="required"
                             class="form-control here">
@@ -94,7 +84,7 @@
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-clock-o"></i>
+                            <div class="fa fa-clock-o"></div>
                         </div>
                         <input id="frequency" name="frequency" placeholder="frequency" type="text" required="required"
                             class="form-control here">
@@ -107,7 +97,7 @@
                 <div class="col-8">
                     <div class="input-group">
                         <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
+                            <div class="fa fa-calendar"></div>
                         </div>
                         <input id="firstTrain" name="firstTrain" placeholder="time of first train" type="text" class="form-control here">
                     </div>
@@ -119,16 +109,9 @@
                 </div>
             </div>
         </form>
-
-
-
     </div>
 
-
-
-
-
-    <!-- Firebase, jQuery, Bootstrap, My JavaScript -->
+    <!-- query links here -->
 
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
